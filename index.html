@@ -1,140 +1,33 @@
 <!DOCTYPE html>
-<html lang="zh-TW">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>陳俞潔 Yujie Chen | 個人網頁</title>
-    <meta name="description" content="陳俞潔的個人介紹網頁 - 臺北科技大學應用英文系">
+    <title>Bee Pollination Game</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <!-- FontAwesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <!-- Background Animated Blobs -->
-    <div class="blob blob-1"></div>
-    <div class="blob blob-2"></div>
-    <div class="blob blob-3"></div>
-
-    <!-- 頂部：個人主視覺區塊 -->
-    <header class="hero-section glass-card" id="card">
-        <div class="hero-profile">
-            <div class="profile-img-wrapper">
-                <img src="avatar.png" alt="陳俞潔 Profile Picture" class="profile-img">
-            </div>
-            <h1 class="name">陳俞潔</h1>
-            <h2 class="title">Yujie Chen</h2>
-            <div class="social-links">
-                <a href="https://www.instagram.com/yujie_.ch?igsh=MXhtZmZrMDVxNDBsYw==" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
-                <a href="https://line.me/ti/p/hQbYun0p1I" target="_blank" class="social-icon"><i class="fab fa-line"></i></a>
-                <a href="mailto:yujiechen.cyc@gmail.com" class="social-icon"><i class="fas fa-envelope"></i></a>
-            </div>
-        </div>
+    <div id="game-container">
+        <!-- Background will be set in CSS -->
         
-        <div class="hero-info">
-            <div class="greeting-box">
-                <p id="typing-text" class="typing-text"></p>
-                <span class="cursor">|</span>
-            </div>
-            
-            <div class="info-badges">
-                <div class="badge-group">
-                    <h3><i class="fas fa-briefcase"></i> 目前打工</h3>
-                    <p>補習班助理中師</p>
-                </div>
-                <div class="badge-group">
-                    <h3><i class="fas fa-star"></i> 人格特質</h3>
-                    <div class="tags">
-                        <span class="tag">高度自律</span>
-                        <span class="tag">邏輯清晰</span>
-                        <span class="tag">樂於助人</span>
-                    </div>
-                </div>
-                <div class="badge-group">
-                    <h3><i class="fas fa-heart"></i> 興趣與愛好</h3>
-                    <div class="tags">
-                        <span class="tag">聽歌 🎵</span>
-                        <span class="tag">追劇 📺</span>
-                        <span class="tag">追星 (時代少年團) ✨</span>
-                    </div>
-                </div>
-            </div>
+        <!-- Game Entities -->
+        <img src="../bee.png" alt="Bee" id="bee" class="entity">
+        <img src="../dragonfly.png" alt="Dragonfly" id="dragonfly" class="entity">
+        <img src="../flower1.png" alt="Pink Flower" id="pink-flower" class="entity">
+        <img src="../ok.png" alt="OK" id="ok-pink" class="ok-mark">
+        <img src="../scallion.png" alt="Garlic" id="garlic" class="entity">
+        <img src="../Flower-4.png" alt="Red Flower" id="red-flower" class="entity">
+        <img src="../ok.png" alt="OK" id="ok-red" class="ok-mark">
+        <img src="../berry.png" alt="Berry" id="berry" class="entity">
+
+        <!-- Controls (Arrows) -->
+        <div id="controls">
+            <img src="../arrow.png" alt="Up Arrow" id="arrow-up" class="control-arrow">
+            <img src="../arrow.png" alt="Down Arrow" id="arrow-down" class="control-arrow">
+            <img src="../arrow.png" alt="Left Arrow" id="arrow-left" class="control-arrow">
+            <img src="../arrow.png" alt="Right Arrow" id="arrow-right" class="control-arrow">
         </div>
-    </header>
-
-    <!-- 下半部：可往下捲動的詳細經歷區塊 -->
-    <main class="page-content">
-        
-        <!-- 教育背景 (滿寬) -->
-        <section class="content-section glass-card">
-            <div class="section-header">
-                <div class="icon-box"><i class="fas fa-graduation-cap"></i></div>
-                <h2>教育背景</h2>
-            </div>
-            <div class="education-content">
-                <p><strong>臺北科技大學</strong> 應用英文系 (一年級)</p>
-                <p><strong>國立新竹高級商業職業學校</strong> 應用英語科</p>
-                <p><strong>新竹縣立湖口高級中學附設國中部</strong></p>
-                <p><strong>新竹縣湖口鄉中興國民小學</strong></p>
-            </div>
-        </section>
-
-        <!-- 檢定與參賽 (左右雙欄) -->
-        <div class="grid-2-col">
-            <section class="content-section glass-card">
-                <div class="section-header">
-                    <div class="icon-box"><i class="fas fa-certificate"></i></div>
-                    <h2>檢定能力</h2>
-                </div>
-                <ul class="styled-list">
-                    <li>GEPT全民英檢 中級 初試通過</li>
-                    <li>Toeic 705</li>
-                    <li>商教會英語能力測驗 3級</li>
-                    <li>TQC中文打字能力檢定 進階級</li>
-                    <li>TQC英文打字能力檢定 實用級</li>
-                    <li>電腦軟體應用 丙級</li>
-                    <li>TQC Excel資訊能力檢定 進階級</li>
-                </ul>
-            </section>
-
-            <section class="content-section glass-card">
-                <div class="section-header">
-                    <div class="icon-box"><i class="fas fa-trophy"></i></div>
-                    <h2>參賽經歷</h2>
-                </div>
-                <ul class="styled-list">
-                    <li>第3屆全國高中職暨大專校院英語繪本創意教學競賽 <strong>第1名</strong></li>
-                    <li>2024萬能杯全國高中職英語讀者劇場 <strong>佳作</strong></li>
-                    <li>2023學生KUSO創意英語配音比賽 <strong>佳作</strong></li>
-                    <li>112學年度外語群專題實作校內初賽 <strong>佳作</strong></li>
-                    <li>Cool English 普技高新聞英閱王比賽 <strong>獲獎</strong></li>
-                    <li>2024光宇盃全國高中職專題競賽 參與</li>
-                </ul>
-            </section>
-        </div>
-
-        <!-- 活動與經歷 (滿寬) -->
-        <section class="content-section glass-card">
-            <div class="section-header">
-                <div class="icon-box"><i class="fas fa-clipboard-list"></i></div>
-                <h2>活動與幹部經歷</h2>
-            </div>
-            <ul class="styled-list two-col-list">
-                <li><strong>幹部經驗：</strong>高二實習/健康股長、高三環保股長</li>
-                <li><strong>小老師經驗：</strong>校園導覽、竹塹導覽、戲劇英文小老師</li>
-                <li>擔任竹塹英語導覽活動 &lt;新竹火車站&gt; 導覽員</li>
-                <li>擔任班內舉辦Mini-project (小專題) 報告人</li>
-                <li>擔任The Tell-Tale Heart生聲入心志工</li>
-                <li>參與學校與明新科大聯合舉辦之外籍生交流活動</li>
-                <li>總統府參訪、臺灣科技大學應用外語系參訪</li>
-            </ul>
-        </section>
-
-    </main>
-
+    </div>
     <script src="script.js"></script>
 </body>
 </html>
